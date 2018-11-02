@@ -1,4 +1,4 @@
-const functions = require('firebase-functions');
+//const functions = require('firebase-functions');
 const firebase = require("firebase/app");
 require("firebase/database");
 const cron = require("cron").CronJob;
@@ -16,7 +16,7 @@ firebase.initializeApp(config);
 
 var db = firebase.database();
 
-var job = new cron("* 30 10 * * *", function()
+var job = new cron("* 10 10 * * *", function()
 {
 	db.ref("/HC_GAMES/").remove();
 	
@@ -24,9 +24,3 @@ var job = new cron("* 30 10 * * *", function()
 );
 
 job.start();
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-exports.helloWorld = functions.https.onRequest((request, response) => {
-	response.send("Hello from Firebase!");
-});
