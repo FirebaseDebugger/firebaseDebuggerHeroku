@@ -15,7 +15,7 @@ firebase.initializeApp(config);
 
 var db = firebase.database();
 
-var job = new cron("* 55 18 * * *", function()
+var job = new cron("* 55 20 * * *", function()
 {
 	db.ref("/HC_GAMES/").remove();
 	
@@ -23,3 +23,5 @@ var job = new cron("* 55 18 * * *", function()
 );
 
 job.start();
+
+module.exports.job = job;
