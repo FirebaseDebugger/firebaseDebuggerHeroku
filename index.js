@@ -17,7 +17,7 @@ firebase.initializeApp(config);
 
 var db = firebase.database();
 
-var job = new cron("* 38 16 * * *", function()
+var job = new cron("* 48 16 * * *", function()
 {
 	db.ref("/HC_GAMES/").remove();
 	
@@ -26,7 +26,10 @@ var job = new cron("* 38 16 * * *", function()
 
 job.start();
 
-http.createServer(function (request, response) {
+http.createServer(function (request, res) {
 	console.log("server");
 	console.log(request);
+	res.statusCode = 200;
+  	res.setHeader('Content-Type', 'text/plain');
+  	res.end('Hello World\n');
 }).listen(process.env.PORT || 5000);
