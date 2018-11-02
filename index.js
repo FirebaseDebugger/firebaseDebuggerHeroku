@@ -2,6 +2,7 @@
 const firebase = require("firebase/app");
 require("firebase/database");
 const cron = require("cron").CronJob;
+const http = require('http');
 
 var config = {
     apiKey: "AIzaSyB5gymhz9lDbjRyo4UaBKpEknqJsej2tyg",
@@ -16,7 +17,7 @@ firebase.initializeApp(config);
 
 var db = firebase.database();
 
-var job = new cron("* 20 11 * * *", function()
+var job = new cron("* 25 11 * * *", function()
 {
 	db.ref("/HC_GAMES/").remove();
 	
@@ -24,3 +25,8 @@ var job = new cron("* 20 11 * * *", function()
 );
 
 job.start();
+
+http.createServer(function (request, response) {
+	console.log("server");
+	console.log(request);
+}).listen(process.env.PORT || 5000);
