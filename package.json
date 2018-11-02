@@ -1,0 +1,24 @@
+{
+  "name": "rankingherokutest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cron": "^1.5.0",
+    "firebase": "^5.5.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FirebaseDebugger/firebaseDebuggerHeroku.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FirebaseDebugger/firebaseDebuggerHeroku/issues"
+  },
+  "homepage": "https://github.com/FirebaseDebugger/firebaseDebuggerHeroku#readme"
+}
