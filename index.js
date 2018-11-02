@@ -10,7 +10,3 @@ http.createServer(function (request, res) {
   	res.end('Hello World\n');
 }).listen(process.env.PORT || 5000);
 
-while(true)
-{
-	console.log(clock);
-}
